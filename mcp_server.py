@@ -14,20 +14,22 @@ if not WEATHER_API_KEY:
 
 mcp= FastMCP("Math")
 
-@mcp.tool()
+@mcp.tool(name="Addition")
 def add(a: int, b: int) -> int:
     print(f"Server received add request: {a}, {b}")
     return a + b
-@mcp.tool()
+
+@mcp.tool(name="Multiplication")
 def multiply(a: int, b: int) -> int:
     print(f"Server received multiply request: {a}, {b}")
     return a * b
-@mcp.tool()
+
+@mcp.tool(name="Sine")
 def sine(a: int) -> float:
     print(f"Server received sine request: {a}")
     return math.sin(a)
 
-@mcp.tool()
+@mcp.tool(name="Get Weather")
 def get_weather(city: str) -> dict:
    """
 
